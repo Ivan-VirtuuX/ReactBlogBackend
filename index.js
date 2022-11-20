@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 4444
 
 const storage = multer.diskStorage({
   destination: (_, __, cb) => {
-    cb(null, require.main?.path + "/" + " uploads ");
+    cb(null, __dirname, "uploads");
   },
   filename: (_, file, cb) => {
     cb(null, file.originalname);
